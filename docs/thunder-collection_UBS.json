@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "UBS",
-    "dateExported": "2023-03-19T19:14:03.333Z",
+    "dateExported": "2023-04-02T01:40:58.740Z",
     "version": "1.1",
     "folders": [
         {
@@ -73,6 +73,20 @@
             "containerId": "",
             "created": "2023-03-19T19:02:12.530Z",
             "sortNum": 55000
+        },
+        {
+            "_id": "ee6e90c3-8479-47b7-abec-822a5e5d924f",
+            "name": "usuario autenticação",
+            "containerId": "",
+            "created": "2023-04-02T00:51:22.741Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "a3148583-7c16-43d7-ab11-226cee212091",
+            "name": "auth",
+            "containerId": "",
+            "created": "2023-04-02T00:47:47.685Z",
+            "sortNum": 65000
         }
     ],
     "requests": [
@@ -875,13 +889,147 @@
             "headers": [],
             "params": [],
             "tests": []
+        },
+        {
+            "_id": "fd51cd23-5707-4e49-a52e-de8100cc0fe5",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "a3148583-7c16-43d7-ab11-226cee212091",
+            "name": "login",
+            "url": "/login",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-04-02T00:47:52.723Z",
+            "modified": "2023-04-02T01:39:22.738Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"mail\": \"oseias@oseias.com\",\n  \"pass\": 123\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.item.token",
+                    "action": "setto",
+                    "value": "{{access_token}}"
+                }
+            ]
+        },
+        {
+            "_id": "02fbebe7-68db-49cc-9c07-80638095de4b",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "a3148583-7c16-43d7-ab11-226cee212091",
+            "name": "logout",
+            "url": "/logout",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-04-02T00:47:58.246Z",
+            "modified": "2023-04-02T00:48:21.092Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "503ed446-a259-479f-aa7b-e7759443e057",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "ee6e90c3-8479-47b7-abec-822a5e5d924f",
+            "name": "usuarios",
+            "url": "/usuario",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-04-02T00:51:46.420Z",
+            "modified": "2023-04-02T00:53:10.036Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bb7f117f-a223-4731-81fd-1dbb6eae6cc4",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "ee6e90c3-8479-47b7-abec-822a5e5d924f",
+            "name": "usuario por id",
+            "url": "/usuario/1",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-04-02T00:51:54.843Z",
+            "modified": "2023-04-02T00:53:05.868Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e3b23e97-4153-4ab2-807c-593071a43db4",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "ee6e90c3-8479-47b7-abec-822a5e5d924f",
+            "name": "atualizar",
+            "url": "/usuario/1",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-04-02T00:52:03.163Z",
+            "modified": "2023-04-02T00:53:13.779Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e1170dc8-5f9c-49a1-8a5f-fd3449c6ee10",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "ee6e90c3-8479-47b7-abec-822a5e5d924f",
+            "name": "criar",
+            "url": "/usuario",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2023-04-02T00:52:07.531Z",
+            "modified": "2023-04-02T00:52:52.261Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "980cd3f7-f140-4a38-8617-710a03b643c2",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "ee6e90c3-8479-47b7-abec-822a5e5d924f",
+            "name": "deletar",
+            "url": "/usuario/1",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2023-04-02T00:52:11.588Z",
+            "modified": "2023-04-02T00:53:16.870Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fb652d44-4651-4883-a461-fa5add3ab973",
+            "colId": "f412e767-2102-4816-afc0-281ea2d2b6ac",
+            "containerId": "a3148583-7c16-43d7-ab11-226cee212091",
+            "name": "register",
+            "url": "/register",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2023-04-02T01:08:11.111Z",
+            "modified": "2023-04-02T01:09:56.432Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"oseias\",\n  \"pass\": 123,\n  \"born\": \"2020-11-12\",\n  \"mail\": \"oseias@oseias.com\"\n}",
+                "form": []
+            },
+            "tests": []
         }
     ],
     "settings": {
         "headers": [],
+        "auth": {
+            "type": "bearer",
+            "bearer": "{{access_token}}"
+        },
         "tests": [],
         "options": {
             "baseUrl": "http://localhost:8000/api"
-        }
+        },
+        "envId": "7035bb22-d86f-47f6-9560-855d64792bbc"
     }
 }
