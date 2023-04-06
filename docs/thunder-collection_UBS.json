@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "UBS",
-    "dateExported": "2023-04-02T01:40:58.740Z",
+    "dateExported": "2023-04-06T01:44:50.465Z",
     "version": "1.1",
     "folders": [
         {
@@ -721,12 +721,12 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-03-19T19:02:10.780Z",
-            "modified": "2023-03-19T19:08:12.239Z",
+            "modified": "2023-04-06T01:11:14.149Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"estado\": \"rn\",\n  \"cidade\": \"natal\",\n  \"bairro\": \"guararapes\",\n  \"numero\": 123,\n  \"rota_id\": 1\n}",
+                "raw": "{\n  \"descricao\": \"secretario\"\n}",
                 "form": []
             },
             "tests": []
@@ -899,12 +899,12 @@
             "method": "POST",
             "sortNum": 60000,
             "created": "2023-04-02T00:47:52.723Z",
-            "modified": "2023-04-02T01:39:22.738Z",
+            "modified": "2023-04-06T01:28:50.225Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"mail\": \"oseias@oseias.com\",\n  \"pass\": 123\n}",
+                "raw": "{\n  \"email\": \"oseias@oseias.com\",\n  \"senha\": \"123\"\n}",
                 "form": []
             },
             "tests": [
@@ -1009,24 +1009,22 @@
             "method": "POST",
             "sortNum": 140000,
             "created": "2023-04-02T01:08:11.111Z",
-            "modified": "2023-04-02T01:09:56.432Z",
+            "modified": "2023-04-06T01:21:24.832Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"oseias\",\n  \"pass\": 123,\n  \"born\": \"2020-11-12\",\n  \"mail\": \"oseias@oseias.com\"\n}",
+                "raw": "{\n  \"senha\": \"123\",\n  \"cpf\": \"2020-11-12\",\n  \"email\": \"oseias@oseias.com\",\n  \"tipo_usuarios_id\": 1\n}",
                 "form": []
             },
             "tests": []
         }
     ],
     "settings": {
-        "headers": [],
         "auth": {
             "type": "bearer",
             "bearer": "{{access_token}}"
         },
-        "tests": [],
         "options": {
             "baseUrl": "http://localhost:8000/api"
         },

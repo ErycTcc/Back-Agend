@@ -12,10 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('secretarios', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('cpf')->primary();
             $table->string('nome');
             $table->string('telefone');
             $table->string('email');
+            $table->foreignId('usuario_sistema_id')
+                ->constrained('usuario_sistemas')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }

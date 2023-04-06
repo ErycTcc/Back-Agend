@@ -13,15 +13,13 @@ return new class extends Migration
     {
         Schema::create('usuario_sistemas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('email')->unique();
             $table->string('senha');
-            $table->foreignId('secretario_id')
-                ->constrained('secretarios')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-            $table->foreignId('tipo_usuario_id')
+            $table->string('cpf')->unique();
+            $table->foreignId('tipo_usuarios_id')
                 ->constrained('tipo_usuarios')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

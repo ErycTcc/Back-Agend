@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('agendas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('medico_id')
-                ->constrained('medicos')
+            $table->string('cpf');
+            $table->foreign('cpf')
+                ->references('cpf')
+                ->on('medicos')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->timestamps();

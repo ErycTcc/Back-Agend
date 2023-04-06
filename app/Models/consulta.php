@@ -15,15 +15,15 @@ class consulta extends Model
         'descricao',
         'agendamento',
         'status',
-        'paciente_id',
-        'medico_id'
+        'cpf_medico',
+        'cpf_paciente'
     ];
 
     public function peciente(): HasOne {
-        return $this->hasOne('pacientes');
+        return $this->hasOne('paciente');
     }
 
-    public function medicos(): HasMany {
-        return $this->hasMany('medicos');
+    public function medico(): HasOne {
+        return $this->hasOne('medico');
     }
 }

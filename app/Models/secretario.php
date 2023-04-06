@@ -9,6 +9,10 @@ class secretario extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'cpf';
+
+    protected $keyType = 'string';
+
     protected $fillable = [
         'nome',
         'telefone',

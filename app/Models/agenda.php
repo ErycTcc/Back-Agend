@@ -11,7 +11,7 @@ class agenda extends Model
     use HasFactory;
 
     protected $fillable = [
-        'medico_id'
+        'cpf'
     ];
 
     public function medicos(): HasMany {

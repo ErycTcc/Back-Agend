@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('cpf')->primary();
             $table->string('nome');
             $table->string('telefone');
             $table->string('genero');
@@ -26,6 +26,10 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->foreignId('endereco_id')
                 ->constrained('enderecos')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+            $table->foreignId('usuario_sistema_id')
+                ->constrained('usuario_sistemas')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->timestamps();

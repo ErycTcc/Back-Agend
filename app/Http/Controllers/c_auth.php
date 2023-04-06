@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
-use App\Models\auth_user as User;
+use App\Models\usuario_sistema as User;
 
 
 final class c_auth extends generic_controller
@@ -26,8 +26,8 @@ final class c_auth extends generic_controller
     {
         try
         {
-            $user = User::where('mail', $request->mail)->first();
-            Hash::check($request->pass, $user->pass);
+            $user = User::where('email', $request->email)->first();
+            Hash::check($request->senha, $user->senha);
 
             return response()->json([
                 'status'    =>  Response::HTTP_CONTINUE,
@@ -57,7 +57,7 @@ final class c_auth extends generic_controller
     {
         try
         {
-            $request['pass'] = Hash::make($request->pass);
+            $request['senha'] = Hash::make($request->senha);
             $user = User::create($request->all());
 
             return response()->json([

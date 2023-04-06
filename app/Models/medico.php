@@ -9,14 +9,18 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class medico extends Model
 {
     use HasFactory;
-    
+
+    protected $primaryKey = 'cpf';
+
+    protected $keyType = 'string';
+
     protected $fillable = [
         'nome',
         'telefone',
         'genero',
         'crm',
         'endereco_id',
-        'consulta_id'
+        'tipo_consulta_id'
     ];
 
     public function endereco(): HasOne {
@@ -24,6 +28,6 @@ class medico extends Model
     }
 
     public function consulta(): HasOne {
-        return $this->hasOne('consultas');
+        return $this->hasOne('tipo_consulta');
     }
 }

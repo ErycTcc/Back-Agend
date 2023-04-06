@@ -17,7 +17,7 @@ use App\Http\Controllers\c_auth;
 Route::controller(c_auth::class)->group(function () {
     Route::post('/login', 'login');
     Route::post('/register', 'register');
-    Route::post('/logout', 'logout')->middleware('auth:sanctum')->middleware('auth:sanctum');
+    Route::post('/logout', 'logout')->middleware('auth:sanctum');
 });
 
 Route::prefix('usuario')->resource('usuario', c_auth::class, ['parameters' => ['usuario' => 'id']])->middleware('auth:sanctum');
@@ -29,5 +29,5 @@ Route::prefix('paciente')->resource('paciente', c_paciente::class, ['parameters'
 Route::prefix('prontuario')->resource('prontuario', c_prontuario::class, ['parameters' => ['prontuario' => 'id']])->middleware('auth:sanctum');
 Route::prefix('secretario')->resource('secretario', c_secretario::class, ['parameters' => ['secretario' => 'id']])->middleware('auth:sanctum');
 Route::prefix('tipo_consulta')->resource('tipo_consulta', c_tipo_consulta::class, ['parameters' => ['tipo_consulta' => 'id']])->middleware('auth:sanctum');
-Route::prefix('tipo_usuario')->resource('tipo_usuario', c_tipo_usuario::class, ['parameters' => ['tipo_usuario' => 'id']])->middleware('auth:sanctum');
+Route::prefix('tipo_usuario')->resource('tipo_usuario', c_tipo_usuario::class, ['parameters' => ['tipo_usuario' => 'id']]);
 Route::prefix('usuario_sistema')->resource('usuario_sistema', c_usuario_sistema::class, ['parameters' => ['usuario_sistema' => 'id']])->middleware('auth:sanctum');

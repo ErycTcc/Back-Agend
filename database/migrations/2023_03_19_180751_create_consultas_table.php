@@ -16,12 +16,16 @@ return new class extends Migration
             $table->dateTime('agendamento');
             $table->string('descricao');
             $table->string('status');
-            $table->foreignId('paciente_id')
-                ->constrained('pacientes')
+            $table->string('cpf_paciente');
+            $table->foreign('cpf_paciente')
+                ->references('cpf')
+                ->on('pacientes')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-            $table->foreignId('medico_id')
-                ->constrained('medicos')
+            $table->string('cpf_medico');
+            $table->foreign('cpf_medico')
+                ->references('cpf')
+                ->on('medicos')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->timestamps();
