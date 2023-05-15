@@ -15,6 +15,7 @@ class paciente extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
+        'cpf',
         'nome',
         'telefone',
         'genero',
@@ -23,7 +24,8 @@ class paciente extends Model
         'altura',
         'cod_sus',
         'prontuario_id',
-        'endereco_id'
+        'endereco_id',
+        'usuario_sistema_id',
     ];
 
     public function prontuario(): HasOne {

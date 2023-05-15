@@ -12,4 +12,9 @@ class c_consulta extends generic_controller
     {
         parent::__construct($request, $model);
     }
+
+    public function show()
+    {
+        return $this->model->where('cpf_paciente', $this->request->id)->get();
+    }
 }

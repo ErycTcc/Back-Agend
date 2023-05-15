@@ -15,12 +15,14 @@ class medico extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
+        'cpf',
         'nome',
         'telefone',
         'genero',
         'crm',
         'endereco_id',
-        'tipo_consulta_id'
+        'tipo_consulta_id',
+        'usuario_sistema_id',
     ];
 
     public function endereco(): HasOne {

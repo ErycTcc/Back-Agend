@@ -42,7 +42,7 @@ abstract class generic_controller extends Controller
      */
     public function update(): void
     {
-        $this->model->update($this->request->all());
+        $this->model->findOrFail($this->request->id)->update($this->request->all());
     }
 
     /**
