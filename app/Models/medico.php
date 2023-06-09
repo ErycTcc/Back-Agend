@@ -29,6 +29,10 @@ class medico extends Model
         return $this->hasOne('enderecos');
     }
 
+    public function agendas(): HasMany {
+        return $this->hasMany('agenda_medico');
+    }
+
     public function consulta(): HasOne {
         return $this->hasOne('tipo_consulta');
     }

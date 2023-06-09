@@ -12,9 +12,4 @@ class c_agenda extends generic_controller
     {
         parent::__construct($request, $model);
     }
-
-    public function show()
-    {
-        return $this->model->where('cpf', $this->request->id)->get();
-    }
 }

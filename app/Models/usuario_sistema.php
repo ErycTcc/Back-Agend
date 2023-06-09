@@ -21,7 +21,7 @@ class usuario_sistema extends Authenticatable
     ];
 
     protected $hidden = [
-        'pass',
+        'senha',
         'remember_token',
     ];
 

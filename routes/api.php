@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\c_agenda;
+use App\Http\Controllers\c_agenda_medico;
 use App\Http\Controllers\c_consulta;
 use App\Http\Controllers\c_endereco;
 use App\Http\Controllers\c_medico;
@@ -22,6 +23,7 @@ Route::controller(c_auth::class)->group(function () {
 
 Route::prefix('usuario')->resource('usuario', c_auth::class, ['parameters' => ['usuario' => 'id']])->middleware('auth:sanctum');
 Route::prefix('agenda')->resource('agenda', c_agenda::class, ['parameters' => ['agenda' => 'id']])->middleware('auth:sanctum');
+Route::prefix('agenda_medico')->resource('agenda_medico', c_agenda_medico::class, ['parameters' => ['agenda_medico' => 'id']])->middleware('auth:sanctum');
 Route::prefix('consulta')->resource('consulta', c_consulta::class, ['parameters' => ['consulta' => 'id']])->middleware('auth:sanctum');
 Route::prefix('endereco')->resource('endereco', c_endereco::class, ['parameters' => ['endereco' => 'id']])->middleware('auth:sanctum');
 Route::prefix('medico')->resource('medico', c_medico::class, ['parameters' => ['medico' => 'id']])->middleware('auth:sanctum');
