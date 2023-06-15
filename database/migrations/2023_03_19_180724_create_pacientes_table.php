@@ -24,10 +24,6 @@ return new class extends Migration
                 ->constrained('prontuarios')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-            $table->foreignId('endereco_id')
-                ->constrained('enderecos')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
             $table->foreignId('usuario_sistema_id')
                 ->constrained('usuario_sistemas')
                 ->cascadeOnUpdate()

@@ -35,16 +35,14 @@ class c_consulta extends generic_controller
             ['hora_inicio', '<=', $dateAndTime['time']],
             ['hora_termino', '>=', $dateAndTime['time']],
             ['cpf', $this->request->cpf_medico]
-        ])->exists()
+        ])->exists();
 
-        return
-            $isMarked && $isMedicFree
-                ? $this->model->create($this->request->all())
-                : (
-                    response()->json([
-                        'status'    => Response::HTTP_INTERNAL_SERVER_ERROR,
-                        'message'   => 'O médico não está disponível.',
-                    ], Response::HTTP_INTERNAL_SERVER_ERROR)
-                );
+        if ($isMarked && $isMedicFree) $this->model->create($this->request->all());
+
+        // return response()->json([
+        //     'status'    => Response::HTTP_INTERNAL_SERVER_ERROR,
+        //     'message'   => 'O médico não está disponível.',
+        // ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        
     }
 }

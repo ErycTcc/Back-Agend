@@ -3,7 +3,6 @@
 use App\Http\Controllers\c_agenda;
 use App\Http\Controllers\c_agenda_medico;
 use App\Http\Controllers\c_consulta;
-use App\Http\Controllers\c_endereco;
 use App\Http\Controllers\c_medico;
 use App\Http\Controllers\c_paciente;
 use App\Http\Controllers\c_prontuario;
@@ -25,7 +24,6 @@ Route::prefix('usuario')->resource('usuario', c_auth::class, ['parameters' => ['
 Route::prefix('agenda')->resource('agenda', c_agenda::class, ['parameters' => ['agenda' => 'id']])->middleware('auth:sanctum');
 Route::prefix('agenda_medico')->resource('agenda_medico', c_agenda_medico::class, ['parameters' => ['agenda_medico' => 'id']])->middleware('auth:sanctum');
 Route::prefix('consulta')->resource('consulta', c_consulta::class, ['parameters' => ['consulta' => 'id']])->middleware('auth:sanctum');
-Route::prefix('endereco')->resource('endereco', c_endereco::class, ['parameters' => ['endereco' => 'id']])->middleware('auth:sanctum');
 Route::prefix('medico')->resource('medico', c_medico::class, ['parameters' => ['medico' => 'id']])->middleware('auth:sanctum');
 Route::prefix('paciente')->resource('paciente', c_paciente::class, ['parameters' => ['paciente' => 'id']])->middleware('auth:sanctum');
 Route::prefix('prontuario')->resource('prontuario', c_prontuario::class, ['parameters' => ['prontuario' => 'id']])->middleware('auth:sanctum');

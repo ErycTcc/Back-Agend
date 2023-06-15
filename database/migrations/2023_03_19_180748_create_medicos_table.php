@@ -17,10 +17,6 @@ return new class extends Migration
             $table->string('telefone');
             $table->string('genero');
             $table->unsignedBigInteger('crm');
-            $table->foreignId('endereco_id')
-                ->constrained('enderecos')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
             $table->foreignId('tipo_consulta_id')
                 ->constrained('tipo_consultas')
                 ->cascadeOnUpdate()

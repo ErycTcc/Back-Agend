@@ -24,15 +24,10 @@ class paciente extends Model
         'altura',
         'cod_sus',
         'prontuario_id',
-        'endereco_id',
         'usuario_sistema_id',
     ];
 
     public function prontuario(): HasOne {
         return $this->hasOne('prontuarios');
-    }
-
-    public function endereco(): HasOne {
-        return $this->hasOne('enderecos');
     }
 }
