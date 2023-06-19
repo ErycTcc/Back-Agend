@@ -16,6 +16,7 @@ return new class extends Migration
             $table->date('data');
             $table->time('hora_inicio');
             $table->time('hora_termino');
+            $table->boolean('status')->default(false);
             $table->string('cpf');
             $table->foreign('cpf')
                 ->references('cpf')

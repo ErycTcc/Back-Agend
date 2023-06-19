@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class medico extends Model
 {
@@ -24,11 +23,4 @@ class medico extends Model
         'usuario_sistema_id',
     ];
 
-    public function agendas(): HasMany {
-        return $this->hasMany('agenda_medico');
-    }
-
-    public function consulta(): HasOne {
-        return $this->hasOne('tipo_consulta');
-    }
 }

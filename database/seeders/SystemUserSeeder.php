@@ -31,7 +31,7 @@ class SystemUserSeeder extends Seeder
             [
                 'email' => 'admin@admin.com',
                 'senha' => Hash::make('123'),
-                'cpf' => '111111111',
+                'cpf' => '11111111111',
                 'tipo_usuarios_id' => 1
             ]
         ]);

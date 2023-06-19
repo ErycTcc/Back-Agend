@@ -16,6 +16,12 @@ return new class extends Migration
             $table->dateTime('agendamento');
             $table->string('descricao');
             $table->string('status');
+            $table->unsignedBigInteger('agenda_id');
+            $table->foreign('agenda_id')
+                ->references('id')
+                ->on('agendas')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('cpf_paciente');
             $table->foreign('cpf_paciente')
                 ->references('cpf')

@@ -10,19 +10,26 @@ class consulta extends Model
 {
     use HasFactory;
 
+    protected $with = ['agenda', 'paciente'];
+
     protected $fillable = [
         'descricao',
         'agendamento',
         'status',
         'cpf_medico',
-        'cpf_paciente'
+        'cpf_paciente',
+        'agenda_id'
     ];
 
-    public function peciente(): HasOne {
-        return $this->hasOne('paciente');
+    public function agenda(): HasOne {
+        return $this->hasOne(agenda_medico::class, 'agenda_id', 'agenda_id');
     }
 
     public function medico(): HasOne {
-        return $this->hasOne('medico');
+        return $this->hasOne(medico::class. 'cpf', 'cpf_medico');
+    }
+
+    public function paciente(): HasOne {
+        return $this->hasOne(paciente::class, 'cpf', 'cpf_paciente');
     }
 }
